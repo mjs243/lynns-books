@@ -18,3 +18,16 @@ model Post {
 
     @@index([name])
 }
+
+model Book {
+    id           Int      @id @default(autoincrement())
+    title        String
+    author       String
+    desceription String?
+    condition    String
+    isBundle     Boolean  @default(false)
+    bundleItems  String[] @default([])
+    seller       String
+    price        Float
+    createdAt    DateTime @default(now())
+}
